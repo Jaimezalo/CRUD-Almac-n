@@ -18,7 +18,7 @@ public class MiAlmacen
     public static void main(String[] args){
     	
         almacen = new ModeloArrayList (); //Implementacion mediante ArrayList.
-    	//almacen = new ModeloHashMap();    //Implementacion mediante HashMap.
+    	almacen = new ModeloHashMap();    //Implementacion mediante HashMap.
         sc = new Scanner(System.in);
         int opcion=0; 
         
@@ -35,7 +35,6 @@ public class MiAlmacen
                     case 7: listar();break;
                     case 8: listarPocoStock();break;
                     case 9: System.out.println("Hasta pronto");break;
-                    default: System.out.println("Opcion incorrecta");break;
                 }
                 System.out.println("\n---------------------------- ");
                 System.out.print("Pulse enter para continuar");
@@ -185,18 +184,20 @@ public class MiAlmacen
        System.out.println("<COMPRAR>");
        System.out.println("Introduzca el codigo");
        int codigo = leerEntero();
+       
        while(almacen.buscarProducto(codigo)==null) {
     	   System.out.println("No existe ningun producto con ese codigo.\nVuelva a introducir el codigo");
     	   codigo = leerEntero();
        }
+       
+       System.out.println("Introduzca las unidades que desea comprar");
+       int unidades = leerEntero();
        Producto p = almacen.buscarProducto(codigo);
-       if(p.getStock()<p.getStock_min()) {
-    	   p.setStock(p.getStock_min());
-       }
-
-       
-       
+       p.setStock(unidades);
+       System.out.println("Se han comprado " + unidades + " unidades de " + p.getNombre());
     }
+
+	
     
     
     /**

@@ -95,7 +95,7 @@ public class ModeloArrayList extends ModeloAbs
   //Listado de todos los productos con stock inferior
     public void PocoStock (){
     		for(Producto p: lista) {
-    			if(p.getStock()<=0) {
+    			if(p.getStock()<= p.getStock_min()) {
     				System.out.println(p.getCodigo() + " " + p.getNombre() + " " + p.getPrecio() + " � " + p.getStock() + " unidades");
     				System.out.println();
     			}

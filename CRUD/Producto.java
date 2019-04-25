@@ -2,16 +2,16 @@
 /**
  * Clase Producto.
  * 
- * @author Jaime Zaloña Garcia 
+ * @author Jaime Zaloï¿½a Garcia 
  * @version 1.0
  */
 public class Producto
 {
     // instance variables - replace the example below with your own
-    private int codigo;    // Código del producto, se utiliza para buscar
+    private int codigo;    // Cï¿½digo del producto, se utiliza para buscar
     private String nombre; // Nombre del producto
     private int stock;    // existencia actuales
-    private int stock_min = 50; // Número mínimo de existencias recomedadas
+    private int stock_min = 5; // Nï¿½mero mï¿½nimo de existencias recomedadas
     private float precio;  // Precio
 
  
@@ -35,7 +35,7 @@ public class Producto
         return nombre;
     }
     /**
-     * @return Código del producto.
+     * @return Cï¿½digo del producto.
      */
     public int getCodigo (){
         return codigo;
@@ -47,14 +47,14 @@ public class Producto
     }
     
     /**
-     * @return Unidades de producto que hay en el almacén.
+     * @return Unidades de producto que hay en el almacï¿½n.
      */
     public int getStock(){
         return stock;
     }
     
     /**
-     * Método utilizado para la compra y/o venta de productos. 
+     * Mï¿½todo utilizado para la compra y/o venta de productos. 
      * @param valor
      */
     public void setStock( int valor ){
@@ -62,14 +62,14 @@ public class Producto
     }
     
     /**
-     * @return Número mínimo de existencias recomendadas.
+     * @return Nï¿½mero mï¿½nimo de existencias recomendadas.
      */
     public int getStock_min(){
         return stock_min;
     }
     
     /**
-     * Método que cambia el valor del stock mínmo que debe tener el almacen sobre un producto.
+     * Mï¿½todo que cambia el valor del stock mï¿½nmo que debe tener el almacen sobre un producto.
      * @param valor
      */
     public void setStock_min( int valor ){
@@ -85,7 +85,7 @@ public class Producto
     }
     
     /**
-     * Método para cambiar el precio a un producto.
+     * Mï¿½todo para cambiar el precio a un producto.
      * @param valor
      */
     public void setPrecio( float valor ){

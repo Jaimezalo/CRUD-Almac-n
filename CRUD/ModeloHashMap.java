@@ -73,16 +73,16 @@ public class ModeloHashMap extends ModeloAbs{
     //Listado de todos los productos que tenemos en el almacen 
     @Override
 	public void listarProductos (){
-    	lista.forEach((k,v) -> System.out.println(k + " " + v.getNombre() + " " + v.getPrecio() + " € " + v.getStock() + " unidades"));
+    	lista.forEach((k,v) -> System.out.println(k + " " + v.getNombre() + " " + v.getPrecio() + " ï¿½ " + v.getStock() + " unidades"));
     }
     
     
   //Listado de todos los productos que tenemos en el almacen 
     public void PocoStock (){
     	for (Entry<Integer, Producto> entry : lista.entrySet()) {
-    		if(entry.getValue().getStock()<=0) {
+    		if(entry.getValue().getStock()<=entry.getValue().getStock_min()) {
     			Producto p = entry.getValue();
-    			System.out.println(p.getCodigo() + " " +  p.getNombre() + " " + p.getPrecio() + " € " + p.getStock() + " unidades");
+    			System.out.println(p.getCodigo() + " " +  p.getNombre() + " " + p.getPrecio() + " ï¿½ " + p.getStock() + " unidades");
     		}
     	    	
     	}
@@ -104,7 +104,7 @@ public class ModeloHashMap extends ModeloAbs{
     	float nuevoPrecio = leerFloat(); //El usuario introduce el nuevo precio.
     	
     		while(nuevoPrecio <= 0) {
-    			System.out.println("El precio introducido debe ser mayor de 0€.\nPorfavor vuelva a introducir el importe");
+    			System.out.println("El precio introducido debe ser mayor de 0ï¿½.\nPorfavor vuelva a introducir el importe");
     			nuevoPrecio = leerFloat();
     		}
     	
