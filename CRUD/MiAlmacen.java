@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * CRUD de un almacen de productos.
- * @author Jaime Zaloña
+ * @author Jaime Zaloï¿½a
  * @since 10/04/2019
  *
  */
@@ -18,7 +18,7 @@ public class MiAlmacen
     public static void main(String[] args){
     	
         almacen = new ModeloArrayList (); //Implementacion mediante ArrayList.
-    //	almacen = new ModeloHashMap();    //Implementacion mediante HashMap.
+    	//almacen = new ModeloHashMap();    //Implementacion mediante HashMap.
         sc = new Scanner(System.in);
         int opcion=0; 
         
@@ -34,6 +34,8 @@ public class MiAlmacen
                     case 6: vender();break;
                     case 7: listar();break;
                     case 8: listarPocoStock();break;
+                    case 9: System.out.println("Hasta pronto");break;
+                    default: System.out.println("Opcion incorrecta");break;
                 }
                 System.out.println("\n---------------------------- ");
                 System.out.print("Pulse enter para continuar");
@@ -144,7 +146,7 @@ public class MiAlmacen
        int codigo = leerEntero();
        try {
     	   Producto p=almacen.buscarProducto(codigo);
-    	   System.out.println("Producto: " + p.getNombre() + " |Precio: " + p.getPrecio() + "€" );   
+    	   System.out.println("Producto: " + p.getNombre() + " |Precio: " + p.getPrecio() + "ï¿½" );   
        }catch(NullPointerException e) {
     	   System.out.println("No existe el producto con codigo " + codigo);
        }
@@ -254,7 +256,7 @@ public class MiAlmacen
     	
     	//Se comprueba que el precio introducido es correcto
     	while(precio <= 0.0) {
-    		System.out.println("El precio debe ser mayor de 0€. Vuelva a introducir un precio");
+    		System.out.println("El precio debe ser mayor de 0ï¿½. Vuelva a introducir un precio");
     		precio = leerFloat();
     	}
     	

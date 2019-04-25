@@ -52,16 +52,16 @@ public class ModeloArrayList extends ModeloAbs
     //Se elimina un producto del almacen a partir de su codigo.
     @Override
 	public boolean borrarProducto ( int codigo ){
-    	Producto p = lista.get(codigo); //Producto a eliminar
-    	if(lista.contains(p)) {
-    		System.out.println("El producto " + lista.get(codigo) + " ha sido eliminado");
-    		lista.remove(p);
-    		
-    		return true;
-    	}else {
-    		System.out.println("No hay ningun producto con ese codigo");
+    
+    	for(Producto p:lista) {
+    		if(p.getCodigo()==codigo) {
+    			System.out.println("El producto " + p + " ha sido eliminado");
+    			lista.remove(p);
+    			return true;
+    		}		
     	}
-      return false;
+    	System.out.println("No hay ningun producto con ese codigo");
+    	return false;
     }
     
     //Devuelve un producto a partir de su codigo.
@@ -86,7 +86,7 @@ public class ModeloArrayList extends ModeloAbs
         Iterator<Producto> nombreIterator = lista.iterator();
         while(nombreIterator.hasNext()){
         	Producto p = nombreIterator.next(); //Producto que va a ser mostrado
-        	System.out.print(p.getCodigo() + " " + p.getNombre() + " " + p.getPrecio() + " € " + p.getStock() + " unidades");
+        	System.out.print(p.getCodigo() + " " + p.getNombre() + " " + p.getPrecio() + " ï¿½ " + p.getStock() + " unidades");
         	System.out.println();
         }
     }
@@ -96,7 +96,7 @@ public class ModeloArrayList extends ModeloAbs
     public void PocoStock (){
     		for(Producto p: lista) {
     			if(p.getStock()<=0) {
-    				System.out.println(p.getCodigo() + " " + p.getNombre() + " " + p.getPrecio() + " € " + p.getStock() + " unidades");
+    				System.out.println(p.getCodigo() + " " + p.getNombre() + " " + p.getPrecio() + " ï¿½ " + p.getStock() + " unidades");
     				System.out.println();
     			}
     		}
@@ -119,7 +119,7 @@ public class ModeloArrayList extends ModeloAbs
     	float nuevoPrecio = leerFloat(); //El usuario introduce el nuevo precio.
     	
     		while(nuevoPrecio <= 0) {
-    			System.out.println("El precio introducido debe ser mayor de 0€.\nPorfavor vuelva a introducir el importe");
+    			System.out.println("El precio introducido debe ser mayor de 0ï¿½.\nPorfavor vuelva a introducir el importe");
     			nuevoPrecio = leerFloat();
     		}
     	
